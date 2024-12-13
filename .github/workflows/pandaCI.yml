@@ -1,0 +1,19 @@
+name: My Panda CI
+on:
+  push:
+    branches: [main]
+
+jobs:
+  builds:
+    runs-on: ubuntu-latest
+    name: My Build
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Setup go
+        uses: actions/setup-go@v2
+      - name: Setup Go environment
+        uses: actions/setup-go@v5.2.0
+        with:
+          # The Go version to download (if necessary) and use. Supports semver spec and ranges. Be sure to enclose this option in single quotation marks.
+          go-version: 1.17.0
