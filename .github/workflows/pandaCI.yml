@@ -23,5 +23,4 @@ jobs:
           go version
           ls
           cd ./Activity1d_TestGoblin
-          go test
           go test -cover
