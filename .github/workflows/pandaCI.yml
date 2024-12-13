@@ -22,5 +22,5 @@ jobs:
         run: |
           go version
           ls
-          go test
-          go test -cover
+          go /Activity1d_TestGoblin/test
+          go /Activity1d_TestGoblin/test -cover
