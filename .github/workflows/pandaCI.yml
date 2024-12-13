@@ -18,9 +18,21 @@ jobs:
           # The Go version to download (if necessary) and use. Supports semver spec and ranges. Be sure to enclose this option in single quotation marks.
           go-version: 1.17.0
 
-      - name: what is go version
+      - name: what is go version and run test
         run: |
           go version
           ls
           cd ./Activity1d_TestGoblin
           go test -cover
+
+      - name: Checkout private repo remotely
+        uses: actions/checkout@v2
+        with:
+          repository: EdythHo/sickandhiding
+          # path: <folder of choice>
+          token: ${{secrets.EDYTH}}
+
+      - name: Show hidden file
+        run:
+          ls
+          echo README.md
