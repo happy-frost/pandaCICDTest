@@ -39,39 +39,32 @@ jobs:
           ls
           cat README.md
 
-      - name: Discord Message
-        # You may pin to the exact commit or the version.
-        # uses: discord-actions/message@5c7149c81a83146e5d01f142be1bf87a61831c4d
-        uses: discord-actions/message@v2
-        with:
-          # A Discord webhook URL
-          webhookUrl: https://discord.com/api/webhooks/1316956354786885673/TnLUfOQiSbcjinGjEXP44tQwVosbe8HGv_gviHMyIZYWbWlr4rcTYRDpNk24h2DO7pa5
-          # A message to send to Discord
-          message: hello 
-          # A username for the message
-          username: guesswho
-          # Toke
-          token: TnLUfOQiSbcjinGjEXP44tQwVosbe8HGv_gviHMyIZYWbWlr4rcTYRDpNk24h2DO7pa5
-          # An avatar for the message
-          # avatar: # optional
-            
-      # - name: discord-webhook
-      # # You may pin to the exact commit or the version.
-      # # uses: johnnyhuy/actions-discord-git-webhook@ba54912b26910da886c9095317d6da6182a87224
-      #   uses: johnnyhuy/actions-discord-git-webhook@v1.0.0
+      # - name: Discord Message
+      #   # You may pin to the exact commit or the version.
+      #   # uses: discord-actions/message@5c7149c81a83146e5d01f142be1bf87a61831c4d
+      #   uses: discord-actions/message@v2
       #   with:
-      #     # Discord webhook URL
-      #     webhook_url: https://discord.com/api/webhooks/1316956354786885673/TnLUfOQiSbcjinGjEXP44tQwVosbe8HGv_gviHMyIZYWbWlr4rcTYRDpNk24h2DO7pa5
-      #     # Discord Webhook ID (ignored if `webhook_url` is set)
-      #     # id: # optional
-      #     # Discord Webhook token (ignored if `webhook_url` is set)
+      #     # A Discord webhook URL
+      #     webhookUrl: https://discord.com/api/webhooks/1316956354786885673/TnLUfOQiSbcjinGjEXP44tQwVosbe8HGv_gviHMyIZYWbWlr4rcTYRDpNk24h2DO7pa5
+      #     # A message to send to Discord
+      #     message: hello 
+      #     # A username for the message
+      #     username: guesswho
+      #     # Toke
       #     token: TnLUfOQiSbcjinGjEXP44tQwVosbe8HGv_gviHMyIZYWbWlr4rcTYRDpNk24h2DO7pa5
-      #     # Overwrite repository name with a custom one
-      #     # repo_name: # optional
-      #     # Hide the full GitHub username
-      #     # censor_username: # optional
-      #     # Toggle whether to show repo links on the webhook event
-      #     # hide_links: # optiona
-      #     # Color of the Discord embed
-      #     # color: # optional, default is 7dbbe6
+      #     # An avatar for the message
+      #     # avatar: # optional
+
+      - name: Send Discord Webhook
+        # You may pin to the exact commit or the version.
+        # uses: hugoalh/send-discord-webhook-ghaction@2c03ad0b59b889bc8c6385b7e8fdda3995add207
+        uses: hugoalh/send-discord-webhook-ghaction@v7.0.3
+        with:
+          # {string} Discord webhook key.
+          key: ${{secrets.DISCORD}}
+          # {string} Message content.
+          content: hello from anisha
+          
+                
+      
             
