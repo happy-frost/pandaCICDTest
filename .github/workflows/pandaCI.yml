@@ -39,20 +39,28 @@ jobs:
           ls
           cat README.md
 
-      - name: Discord Message
-        # You may pin to the exact commit or the version.
-        # uses: discord-actions/message@5c7149c81a83146e5d01f142be1bf87a61831c4d
+      # - name: Discord Message
+      #   # You may pin to the exact commit or the version.
+      #   # uses: discord-actions/message@5c7149c81a83146e5d01f142be1bf87a61831c4d
+      #   uses: discord-actions/message@v2
+      #   with:
+      #     # A Discord webhook URL
+      #     webhookUrl: ${{secrets.DISCORD}}
+      #     # A message to send to Discord
+      #     message: hello 
+      #     # A username for the message
+      #     username: guesswho
+      #     # Token
+      #     # An avatar for the message
+      #     # avatar: # optional
+
+      - name: Notify Discord
         uses: discord-actions/message@v2
         with:
-          # A Discord webhook URL
-          webhookUrl: ${{secrets.DISCORD}}
-          # A message to send to Discord
-          message: hello 
-          # A username for the message
-          username: guesswho
-          # Token
-          # An avatar for the message
-          # avatar: # optional
+          webhookUrl: ${{ secrets.DISCORD }}
+          message: "Hello, from Github"
+          username: "Github"
+          avatar: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
 
       # - name: Send Discord Webhook
       #   # You may pin to the exact commit or the version.
