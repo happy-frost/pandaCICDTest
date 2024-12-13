@@ -29,10 +29,12 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: EdythHo/sickandhiding
-          # path: <folder of choice>
+          path: edythfolder
           token: ${{secrets.EDYTH}}
 
       - name: Show hidden file
-        run:
+        run: |
           ls
-          echo README.md
+          cd edythfolder
+          ls
+          cat README.md
