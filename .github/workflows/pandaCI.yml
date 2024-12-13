@@ -38,3 +38,18 @@ jobs:
           cd edythfolder
           ls
           cat README.md
+
+      - name: Discord Message
+        # You may pin to the exact commit or the version.
+        # uses: discord-actions/message@5c7149c81a83146e5d01f142be1bf87a61831c4d
+        uses: discord-actions/message@v2
+        with:
+          # A Discord webhook URL
+          webhookUrl: https://discord.com/api/webhooks/1316956354786885673/TnLUfOQiSbcjinGjEXP44tQwVosbe8HGv_gviHMyIZYWbWlr4rcTYRDpNk24h2DO7pa5
+          # A message to send to Discord
+          message: hello 
+          # A username for the message
+          username: guesswho
+          # An avatar for the message
+          # avatar: # optional
+          
